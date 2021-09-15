@@ -1,5 +1,0 @@
-FROM infinispan/server:11.0.9.Final
-ARG infinispan_xml
-COPY --chown=185  $infinispan_xml /opt/infinispan/server/conf/infinispan-demo.xml
-
-ENTRYPOINT /opt/infinispan/bin/server.sh -c /opt/infinispan/server/conf/infinispan-demo.xml
