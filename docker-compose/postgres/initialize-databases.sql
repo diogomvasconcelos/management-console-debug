@@ -8,6 +8,23 @@ CREATE SCHEMA workflow AUTHORIZATION postgres;
 GRANT ALL PRIVILEGES ON SCHEMA workflow TO postgresuser;
 GRANT ALL PRIVILEGES ON SCHEMA workflow TO postgres;
 
+CREATE TABLE IF NOT EXISTS workflow.workflow_config
+(
+    company text COLLATE pg_catalog."default",
+    workflow_id text COLLATE pg_catalog."default",
+    key text COLLATE pg_catalog."default",
+    value text COLLATE pg_catalog."default",
+    start_date date,
+    end_date date
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+GRANT ALL PRIVILEGES ON TABLE workflow.workflow_config TO postgresuser;
+GRANT ALL PRIVILEGES ON TABLE workflow.workflow_config TO postgres;
+
 create table JobEntity (
        id varchar(255) not null,
         callbackEndpoint varchar(255),
