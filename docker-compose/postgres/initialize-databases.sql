@@ -8,7 +8,7 @@ CREATE SCHEMA workflow AUTHORIZATION postgres;
 GRANT ALL PRIVILEGES ON SCHEMA workflow TO postgresuser;
 GRANT ALL PRIVILEGES ON SCHEMA workflow TO postgres;
 
-CREATE TABLE IF NOT EXISTS workflow.workflow_config
+CREATE TABLE IF NOT EXISTS workflow.workflow_assigned_states
 (
     company text COLLATE pg_catalog."default",
     workflow_id text COLLATE pg_catalog."default",
@@ -22,8 +22,8 @@ WITH (
 )
 TABLESPACE pg_default;
 
-GRANT ALL PRIVILEGES ON TABLE workflow.workflow_config TO postgresuser;
-GRANT ALL PRIVILEGES ON TABLE workflow.workflow_config TO postgres;
+GRANT ALL PRIVILEGES ON TABLE workflow.workflow_assigned_states TO postgresuser;
+GRANT ALL PRIVILEGES ON TABLE workflow.workflow_assigned_states TO postgres;
 
 create table JobEntity (
        id varchar(255) not null,
